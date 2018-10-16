@@ -1,0 +1,23 @@
+
+In server am citit pe rand cuvant cu cuvant liniile si le am adaugat in vectori pe categorii.
+Pentru server in bucla while dupa ce primesc de la client mesajul parsez sirul primit daca primul cuvant este login
+verific daca pinul si numarul cardului corespund unui client.Daca corespund dupa verific daca socketul nu este ocupat de vreun alt client testand cu o variabila acest fapt care o fac 1
+cand se ocupa socketul. si pentru fiecare card daca este logat pe vreun socket tin o variabila intr un array care este 1 cand este logat.
+.apoi verific daca cardul clientului nu este blocat si daca nu este
+afisez mesajul corespunzator,daca nu afisez mesajul corespunzator cu codul erorii.
+Pentru cazurile in care gresesc pinul mentin un contoar pe care il incrementez de fiecare data cand gresesc pinul pentru card
+Dupa ce ma deloghez resetez contoarul daca gresesc de 3 ori blochez cardul
+Daca primesc de la client comanda logout resetez clientul cum era inainte de logare cu toate variabilele corespunzatoare.
+Pentru comanda listsold caut in vector soldul corespunzator clientului logat si il afisez cu precizie de 2 zecimale
+Pentru transfer ca sa compun mesajul caut in vector numele si prenumele clientul dupa pozitia returnata de cardul clientului 
+Apoi verific daca prima litera primita este y accept transferul .Caut soldul clientului care transfera dupa card din care scad suma care trebuie transferata
+Si adaug aceasta suma la soldul clientului caruia ii transfer . Daca nu e acceptat afisez mesaj de eroare corespunzator
+De asemenea testez mereu pt fiecare comanda inafara de login daca este autentificat vreun client pe socket altfel returnez mesaj de eroare
+Pentru comanda quit adaug la multimea socketilor din read_fds socketul pentru stdin pe pozitia 0 care ii corespunde.
+Ca sa parsez sirurile am folosit functtile strcpy,strcat,sprintf si am cautat in vectori cu find si vector.at
+
+Pentru client citesc de la tastatura si parsez cuvant cu cuvant trimitand la server mesajele in functie de comanda.
+Dupa ce primesc mesajul de la server il scriu in fisier dupa ce scriu mesajul trimis la server.
+Compun numele fisierelor dupa pid ul propiu fiecarei sesiuni obtinut cu functia getpid
+
+
